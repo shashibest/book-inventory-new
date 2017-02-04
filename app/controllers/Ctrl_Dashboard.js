@@ -19,7 +19,7 @@ angular.module('myApp.Dashboard', ['ngRoute'])
 
 
     $rootScope.UserData = USERSERVICE.getUser();
-    console.log(typeof $rootScope.UserData.userName);
+   // console.log(typeof $rootScope.UserData.userName);
   	if($rootScope.UserData.userName == undefined){
   		$location.path('/login');
   	}

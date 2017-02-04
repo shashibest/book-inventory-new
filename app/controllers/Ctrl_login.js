@@ -14,6 +14,13 @@ angular.module('myApp.login', ['ngRoute','ngMessages'])
 	$rootScope.metaservice = MetaService;
     $rootScope.metaservice.set("UserLogin | angular-seed","register user login here desc"," login UserLogin ");
 	
+	
+	$rootScope.UserData = USERSERVICE.getUser();
+   // console.log(typeof $rootScope.UserData.userName);
+  	if($rootScope.UserData.userName){
+  		$location.path('/Dashboard');
+  	};
+	
        $scope.userData = {};
  	   $scope.loginUser = function(info){
 	   	    //console.log(info);
@@ -42,8 +49,7 @@ angular.module('myApp.login', ['ngRoute','ngMessages'])
 		        }
 		    });
 		    
-	   }
-
-}])
-
-;
+	   };
+	
+	   
+}]);

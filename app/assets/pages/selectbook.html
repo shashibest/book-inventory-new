@@ -10,8 +10,9 @@
             <!-- /.row -->
     		 	  
 			
-	<div class="container">
-        <div class="row ">
+	<div class="container" >
+      <!--  <div class="row" ng-repeat="x in data1">-->
+        <div class="row" ng-repeat="b in data1">
             <div class="col-xs-12 col-md-4 ">
                <div class="alert alert-default">
 			     <div ><center>
@@ -20,28 +21,34 @@
                     </a></center>
                  </div>			     
 			   
-			   <div class=" selectbook" >
-			     <div class="booktitle"><b>PHP Technology</b></div>
-			     <div class="bookdetails1"><b>ISBN:</b> 123456789</div>
-			     <div class="bookdetails1"><b>Publisher:</b> Nilima Padamaver</div>
-			     <div class="bookdetails1"><b>Quantity:</b> 456</div>
-			     <div class="bookdetails1"><b>Price:</b> $ 200</div>
-			     <div class="bookdetails1"><b>Binding:</b> </div>
-			     <div class="bookdetails1"><b>Bin location:</b> </div>
-			     <div class="bookdetails1"><b>Spot:</b> </div>
-			     <div class="bookdetails1"><b>Reading level:</b> 45</div>
+			   <section class="selectbook" >	
+			     <div class="booktitle"><b>{{b.title}}</b></div>
+			     <div class="bookdetails1"><b>ISBN:</b> {{b.ISBN}}</div>
+			     <div class="bookdetails1"><b>Publisher:</b> {{b.publisher}}</div>
+			     <div class="bookdetails1"><b>Quantity:</b> {{b.quantity}}</div>
+			     <div class="bookdetails1"><b>Price:</b> {{b.price}}</div>
+			     <!--<div class="bookdetails1"><b>Binding:</b>{{binding1}} </div>-->
+			     <div class="bookdetails1"><b>Bin location:</b>{{b.binLocation[0]}} </div>
+			    <!--<div class="bookdetails1"><b>Spot:</b> {{spot1}}</div>-->
+			     <div class="bookdetails1"><b>Reading level:</b> {{b.readingLevel}}</div>
 				 <br>
 				 <div class="row" >
+				    <form role="form" name="sellbook">
                       <div class="col-md-12">
-					      <div class="col-xs-6 col-sm-6">
-                             <input class="form-control" name="sell" type="number" autofocus value="300">
+					      <div class="col-xs-6 col-sm-6" ng-class="{ 'has-error': sellbook.sell.$dirty && sellbook.sell.$invalid }">
+                             <input class="form-control" name="sell" ng-model="quantity" id="sell" ng-minlength="1" type="number" autofocus placeholder="Quantity" value="" required>
+							 
 						  </div>
-						 <div class="col-xs-6  col-sm-6 ">
-                            <a href="#!/success" class="btn btn-outline btn-primary btn-block">Sell</a>
-							</div>		
-				      </div>					
+						 <div class="col-xs-6  col-sm-6 "><!--#!/success/{{bId}}/{{quantity1}}-->
+                            <button class="btn btn-outline btn-primary btn-block" ng-disabled="sellbook.$invalid" ng-click="sellBook1({bookId:b._id,quantity:quantity})">Sell</button>
+						 </div>
+						 <div ng-messages="sellbook.sell.$error " ng-if="sellbook.sell.$dirty" style="color:maroon; padding-left:40px; " class="fa"role="alert">     
+                                   <div ng-messages-include="assets/pages/messages.html"></div>
+                         </div>
+				      </div>
+                    </form>					  
 				  </div>
-			   </div>
+			   </section>
 			   
               </div>
             </div>

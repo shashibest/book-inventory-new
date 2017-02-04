@@ -19,6 +19,7 @@ angular.module('myApp', [
   'myApp.search-book',
   'myApp.selectbook',
   'myApp.success',
+  'myApp.user-profile',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

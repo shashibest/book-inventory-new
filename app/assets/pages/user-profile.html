@@ -1,0 +1,30 @@
+ 
+      <div ng-include="'assets/pages/sidebar.html'"></div>
+	   <div id="page-wrapper">
+            
+            <!-- /.row -->
+            <div class="row" >
+                <div class="col-md-5" style="margin-top:50px;">
+				<h1>User Profile</h1>
+                   ID:<b ng-bind="UserData._id "></b><br>
+                   userName:<b ng-bind="UserData.userName | uppercase"></b><br>
+                   emailId:<b ng-bind="UserData.emailId"></b><br>
+                   <!--password:<b ng-bind="UserData.password"></b><br>-->
+                   status:<b ng-bind="UserData.status"></b><br>
+                   roleId:<b ng-bind="UserData.roleId"></b><br>
+                   createdDate:<b ng-bind="UserData.createdDate"></b><br>
+					
+					
+                </div>
+                
+                
+                
+            </div>
+            <!-- /.row -->
+            
+            
+        </div>
+        <!-- /#page-wrapper -->
+
+
+

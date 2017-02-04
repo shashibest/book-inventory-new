@@ -29,6 +29,8 @@ padding-left: 20px;
 }
 .dropdown-user
 {
+background-color: skyblue;
+color: white;
 width:220px;
 }
 .avatar {

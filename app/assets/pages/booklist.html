@@ -11,54 +11,34 @@
     		 	  
 			
 	<div class="container">
-        <div class="row ">
-		
-            <div class="col-xs-12 col-md-8 well">
-               
-			   <div class="row">
+        <div class="row " ng-repeat="item in data">		
+            <div class="col-xs-12 col-md-8 well" >
+			
+			   <div class="row" >
 			     <div class="col-xs-3 col-md-3">
-                    <a href="#!/selectbook" class="">
-                     <img  src="assets/book-images/4-10-home.jpg" alt="..." class="img-responsive ">
+                   <!-- <a href="#!/selectbook" class="">
+				   <a href="" ng-click="selectBookId(item._id)">-->
+<a href="#!/selectbook/{{item._id}}">
+					<!-------/{{item.binLocation[0]}}---->
+                     <img   src="assets/book-images/4-10-home.jpg" alt="book" class="img-responsive ">
                     </a>
                  </div>			     
-			   
+			 
 			   <div class="col-xs-6 col-md-6 bookdetails" >
-			     <div class="booktitle"><b>PHP Technology</b></div>
-			     <div class="bookdetails1"><b>ISBN:</b> 123456789</div>
-			     <div class="bookdetails1"><b>Publisher:</b> Nilima Padamaver</div>
+			     <div class="booktitle"><b>{{item.title}}</b></div>
+			     <div class="bookdetails1"><b>ISBN:</b> {{item.ISBN}}</div>
+			     <div class="bookdetails1"><b>Publisher:</b> {{item.publisher}}</div>
 			   </div>
 			   <div class="col-xs-2 col-md-2">
 			      <div class="row">
 			     
-			      <div class="booktitle " style="padding-top:50px;"><b> Q : 345</b></div>
+			      <div class="booktitle " style="padding-top:50px;"><b> Q : {{item.quantity}}</b></div>
 			      </div>
 			    </div>
                </div>
             </div>
         </div>
-		<div class="row ">
-            <div class="col-xs-12 col-md-8 well">
-               <div class="row">
-			     <div class="col-xs-3 col-md-3">
-                    <a href="selectbook.html" class="">
-                     <img  src="assets/book-images/4-10-home.jpg" alt="..." class="img-responsive ">
-                    </a>
-                 </div>			     
-			   
-			   <div class="col-xs-6 col-md-6 bookdetails" >
-			     <div class="booktitle"><b>PHP Technology</b></div>
-			     <div class="bookdetails1"><b>ISBN:</b> 123456789</div>
-			     <div class="bookdetails1"><b>Publisher:</b> Nilima Padamaver</div>
-			   </div>
-			   <div class="col-xs-2 col-md-2">
-			      <div class="row">
-			     
-			      <div class="booktitle " style="padding-top:50px;"><b> Q : 345</b></div>
-			      </div>
-			    </div>
-            </div>
-            </div>
-        </div>
+		
 		
 		
     </div>
